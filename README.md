@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+##  Project Overview
+This project is a responsive Todo application built with React and TypeScript.  
+It focuses on clean architecture, reusable components, and separation of concerns using a custom hook structure.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Features
+- Add, edit, delete tasks
+- Toggle task completion
+- Search by title or description
+- Filter by All / Active / Completed
+- Deadline indicator with dynamic status (Expired / Approaching)
+- Persistent storage with localStorage
+- Responsive grid layout
+- Feature-based folder structure
 
-Currently, two official plugins are available:
+##  Project Structure
+The project follows a feature-based architecture:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+features/
+  todo/
+    components/
+    hooks/
+    types/
+    utils/
 
-## React Compiler
+- Business logic is handled inside a custom hook (useTodos)
+- UI components are kept separate from state logic
+- LocalStorage logic is abstracted into a storage utility
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<img width="1543" height="938" alt="Ekran görüntüsü 2026-02-27 232109" src="https://github.com/user-attachments/assets/d4e1bed7-3feb-4e08-b1db-3aebbc80d5b5" />
+<img width="1425" height="952" alt="Ekran görüntüsü 2026-02-27 232122" src="https://github.com/user-attachments/assets/5a50519a-3bf0-45bc-a9f3-b376eb91256c" />
+<img width="901" height="443" alt="Ekran görüntüsü 2026-02-27 232135" src="https://github.com/user-attachments/assets/0d791764-2658-49e2-afb4-841b80397313" />
+<img width="1339" height="421" alt="Ekran görüntüsü 2026-02-27 232150" src="https://github.com/user-attachments/assets/f61421ed-9e9f-4b42-bcc0-48f17db668b1" />
